@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threejs PlayBook - Project Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            margin-left: 0;
+            background-attachment: fixed;
+        }
+
+        .project-header {
+            padding: 100px 2rem 50px;
+            text-align: center;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            text-decoration: none;
+            color: var(--title-color);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            color: var(--skin-color);
+        }
+
+        .project-description {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border: 2px solid var(--box-color);
+            position: relative;
+            aspect-ratio: 9/19;
+            /* Enforce mobile screenshot ratio */
+            background: var(--box-color);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--skin-color);
+            box-shadow: 0 20px 40px rgba(220, 20, 60, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+    <section class="project-header">
+        <h1 class="section-title">Threejs PlayBook</h1>
+        <h3 style="color: var(--skin-color); margin-bottom: 1rem; font-weight: 500;">React Native Mobile App</h3>
+        <span
+            style="background: rgba(var(--hue-color), 19%, 15%, 0.8); color: var(--text-color); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; border: 1px solid var(--skin-color); display: inline-block; margin-bottom: 2rem;">
+            <i class="fas fa-flask" style="margin-right: 8px;"></i>Currently in Closed Testing
+        </span>
+        <p class="project-description">
+            Threejs PlayBook is the ultimate companion for developers, students, and 3D enthusiasts looking to master
+            the art of 3D web graphics on mobile. Built with <strong>React Native</strong>, it features interactive 3D
+            models, an Augmented Reality (AR) Viewer,
+            tutorials and code snippets. Explore stunning visualizations and learn by doing!
+        </p>
+    </section>
+
+    <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">Project Images</h2>
+    <div class="gallery-grid" id="gallery">
+        <!-- Javascript will populate this -->
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Alan Joseph Monichan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const images = [
+            'image.png', 'image copy.png', 'image copy 2.png', 'image copy 3.png',
+            'image copy 4.png', 'image copy 5.png', 'image copy 6.png', 'image copy 7.png',
+            'image copy 8.png', 'image copy 9.png', 'image copy 10.png', 'image copy 11.png', 'image copy 12.png'
+        ];
+
+        const gallery = document.getElementById('gallery');
+
+        images.forEach((img, index) => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.style.opacity = '0';
+            item.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
+
+            const image = document.createElement('img');
+            image.src = `../images/playbook/${img}`;
+            image.alt = 'Threejs PlayBook App Screenshot';
+            image.loading = 'lazy';
+
+            item.appendChild(image);
+            gallery.appendChild(item);
+        });
+    </script>
+</body>
+
+</html>

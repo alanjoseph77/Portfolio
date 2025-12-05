@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Three.js Projects - Alan Joseph Monichan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            margin-left: 0;
+            background-attachment: fixed;
+        }
+
+        .project-header {
+            padding: 100px 2rem 50px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(var(--hue-color), 19%, 5%, 0.9), var(--body-color));
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            text-decoration: none;
+            color: var(--title-color);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .back-btn:hover {
+            color: var(--skin-color);
+        }
+
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+        }
+
+        /* Sub-project specific styles */
+        .sub-project {
+            background: var(--box-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .sub-project:hover {
+            border-color: var(--skin-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .sub-project-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: var(--title-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--skin-color);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .sub-project-desc {
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-img-container {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Since these are technical demos, contain might be better to show full geometry */
+            transition: transform 0.5s ease;
+        }
+
+        .project-img-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .tech-badge {
+            background: rgba(var(--hue-color), 19%, 15%, 0.8);
+            color: var(--title-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+    <section class="project-header">
+        <h1 class="section-title" style="margin-bottom: 0.5rem;">Pure Three.js Projects</h1>
+        <h3 style="color: var(--skin-color); margin-bottom: 1.5rem; font-weight: 500;">Procedural Geometry & Coding</h3>
+
+        <div class="tech-stack" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <span class="tech-badge"><i class="fas fa-cube"></i> Three.js</span>
+            <span class="tech-badge"><i class="fab fa-js"></i> JavaScript</span>
+            <span class="tech-badge"><i class="fas fa-code"></i> No GLB Models</span>
+            <span class="tech-badge"><i class="fas fa-layer-group"></i> Primitive Geometries</span>
+        </div>
+    </section>
+
+    <div class="project-content">
+        <div class="project-description" style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+            <p>
+                A collection of technical demonstrations and interactive 3D applications built entirely using code.
+                Unlike standard workflows that import 3D models (GLB/GLTF), these projects construct complex shapes
+                programmatically using Three.js primitives, custom buffer geometries, and mathematical algorithms.
+            </p>
+        </div>
+
+        <!-- Realme Phone Project -->
+        <div class="sub-project">
+            <h2 class="sub-project-title">Realme Phone Visualization</h2>
+            <p class="sub-project-desc">
+                A highly detailed 3D representation of a smartphone created solely through code.
+                Features precise geometry placement, custom materials for screen/body, and interactive rotation.
+                Demonstrates the capability of constructing complex consumer electronics product visualizations
+                programmatically.
+            </p>
+            <div class="project-grid" id="realme-grid"></div>
+        </div>
+
+        <!-- Molding Station Project -->
+        <div class="sub-project">
+            <h2 class="sub-project-title">Industrial Molding Station</h2>
+            <p class="sub-project-desc">
+                A complex industrial simulation scene representing a molding station.
+                Constructed using multiple primitive shapes combined to form machinery parts.
+                Includes mechanical animations and accurate spatial arrangement for training simulations.
+            </p>
+            <div class="project-grid" id="molding-grid"></div>
+        </div>
+
+        <!-- Gate Valve Project -->
+        <div class="sub-project">
+            <h2 class="sub-project-title">Gate Valve Assembly</h2>
+            <p class="sub-project-desc">
+                An engineering visualization of a Gate Valve.
+                Shows the internal components and external casing, built layer by layer using cylinders, toruses, and
+                boxes.
+                Ideal for technical training and explaining mechanical assembly without heavy model assets.
+            </p>
+            <div class="project-grid" id="valve-grid"></div>
+        </div>
+
+        <!-- Elbow Pipe Project -->
+        <div class="sub-project">
+            <h2 class="sub-project-title">Pipe Elbow Joint</h2>
+            <p class="sub-project-desc">
+                A study in curved geometry generation.
+                This project procedurally generates an elbow pipe connection, focusing on smooth curvature and
+                flange connections common in plumbing and industrial piping systems.
+            </p>
+            <div class="project-grid" id="elbow-grid"></div>
+        </div>
+
+        <!-- DC Motor Project -->
+        <div class="sub-project">
+            <h2 class="sub-project-title">DC Motor Component</h2>
+            <p class="sub-project-desc">
+                A simplified breakdown of a DC Motor.
+                Visualizes the stator, rotor, and commutators.
+                Created to demonstrate how educational physics assets can be lightweight and web-native.
+            </p>
+            <div class="project-grid" id="motor-grid"></div>
+        </div>
+
+        <!-- Drone Project -->
+        <div class="sub-project">
+            <h2 class="sub-project-title">Quadcop Drone</h2>
+            <p class="sub-project-desc">
+                A complete quadcopter drone model built with primitives.
+                Features rotating propellers and aerodynamic frame structure.
+                Demonstrates how complex vehicle assemblies can be constructed programmatically.
+            </p>
+            <div class="project-grid" id="drone-grid"></div>
+        </div>
+
+        <!-- BLDC Motor Project -->
+        <div class="sub-project">
+            <h2 class="sub-project-title">BLDC Motor Assembly</h2>
+            <p class="sub-project-desc">
+                A detailed breakdown of a Brushless DC Motor.
+                Showcasing the internal stator windings and permanent magnet rotor.
+                Useful for explaining electromagnetic principles in modern propulsion systems.
+            </p>
+            <div class="project-grid" id="bldc-grid"></div>
+        </div>
+
+        <!-- Procedural Chair Project -->
+        <div class="sub-project">
+            <h2 class="sub-project-title">Procedural Chair</h2>
+            <p class="sub-project-desc">
+                A parametrically generated office chair demonstrating complex curved geometries and assembly.
+                Created using custom tube geometries and extrusions to form a cohesive furniture piece.
+            </p>
+            <div class="project-grid" id="chair-grid"></div>
+        </div>
+
+        <!-- Other Models -->
+        <div class="sub-project">
+            <h2 class="sub-project-title">Other Schematics & Prototypes</h2>
+            <p class="sub-project-desc">
+                Various engineered components including rotors, pendulums, steering mechanisms, and furniture
+                layouts. These prototypes serve as building blocks for larger industrial simulations.
+            </p>
+            <div class="project-grid" id="other-grid"></div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Alan Joseph Monichan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Data for projects
+        const projects = {
+            realme: [
+                'realme1.png', 'realme2.png', 'realme3.png'
+            ],
+            molding: [
+                '1.png', '2.png', '3.png', 'o.1mol.png'
+            ],
+            valve: [
+                'g1.png', 'g2.png', 'g3.png'
+            ],
+            elbow: [
+                'el1.png', 'el2.png', 'el3.png'
+            ],
+            motor: [
+                'dc1.png', 'dc2.png', 'dc3.png'
+            ],
+            drone: [
+                'drone.png', 'drone2.png', 'drone3.png'
+            ],
+            bldc: [
+                'bld1.png', 'bld2.png', 'bld3.png'
+            ],
+            chair: [
+                'c1.png', 'c2.png', 'c3.png'
+            ],
+            other: [
+                'Squirrel_Cage_roto.png', 'sterring.png', 'pendulum.png', 'table.png', 'office.png'
+            ]
+        };
+
+        // Helper to populate grids
+        function populateGrid(elementId, folderName, images) {
+            const grid = document.getElementById(elementId);
+            if (!grid) return;
+
+            images.forEach(img => {
+                const container = document.createElement('div');
+                container.className = 'project-img-container';
+
+                const image = document.createElement('img');
+                image.src = `../images/three.js/${folderName}/${img}`;
+                image.alt = `${folderName} Visualization`;
+                image.loading = 'lazy';
+
+                container.appendChild(image);
+                grid.appendChild(container);
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            populateGrid('realme-grid', 'realmephn', projects.realme);
+            populateGrid('molding-grid', 'moldingstation', projects.molding);
+            populateGrid('valve-grid', 'Gate valve', projects.valve);
+            populateGrid('elbow-grid', 'elbow', projects.elbow);
+            populateGrid('elbow-grid', 'elbow', projects.elbow);
+            populateGrid('motor-grid', 'dc_motorsimple', projects.motor);
+            populateGrid('drone-grid', 'drone', projects.drone);
+            populateGrid('bldc-grid', 'bldc_motor', projects.bldc);
+            populateGrid('chair-grid', 'chair', projects.chair);
+            populateGrid('other-grid', 'othermodels', projects.other);
+        });
+    </script>
+</body>
+
+</html>

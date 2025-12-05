@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatPDFPilot - Project Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            margin-left: 0;
+            background-attachment: fixed;
+        }
+
+        .project-header {
+            padding: 100px 2rem 50px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(var(--hue-color), 19%, 5%, 0.9), var(--body-color));
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            text-decoration: none;
+            color: var(--title-color);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .back-btn:hover {
+            color: var(--skin-color);
+        }
+
+        .project-content {
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--box-color);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--skin-color);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--skin-color);
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .tech-badge {
+            background: rgba(var(--hue-color), 19%, 15%, 0.8);
+            color: var(--title-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .tech-badge:hover {
+            border-color: var(--skin-color);
+            transform: translateY(-2px);
+        }
+
+        .section-heading {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            color: var(--title-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .architecture-section,
+        .endpoints-section {
+            background: var(--box-color);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+        }
+
+        .code-block {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Fira Code', monospace;
+            color: #e6e6e6;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        ul.feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.feature-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-color);
+        }
+
+        ul.feature-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--skin-color);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+    <section class="project-header">
+        <h1 class="section-title" style="margin-bottom: 0.5rem;">ChatPDFPilot <span style="font-size: 1.5rem;">🚀</span>
+        </h1>
+        <h3 style="color: var(--skin-color); margin-bottom: 1.5rem; font-weight: 500;">AI-Powered PDF Chat Application
+        </h3>
+
+        <div class="tech-stack">
+            <span class="tech-badge"><i class="fab fa-react"></i> React 18</span>
+            <span class="tech-badge"><i class="fab fa-node-js"></i> Node.js</span>
+            <span class="tech-badge"><i class="fas fa-brain"></i> Google Gemini AI</span>
+            <span class="tech-badge"><i class="fas fa-database"></i> PostgreSQL</span>
+            <span class="tech-badge"><i class="fas fa-wind"></i> Tailwind CSS</span>
+        </div>
+    </section>
+
+    <div class="project-content">
+        <div class="project-description" style="text-align: center;">
+            <p>
+                Upload PDFs and have intelligent conversations with your documents. ChatPDFPilot leverages Google Gemini
+                AI to provide summaries, answer questions, and generate insights from your PDF files in real-time.
+            </p>
+        </div>
+
+        <h2 class="section-heading">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-file-pdf feature-icon"></i>
+                <h3>PDF Upload & Processing</h3>
+                <p>Drag & drop PDF documents with instant text extraction for seamless analysis.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-robot feature-icon"></i>
+                <h3>AI-Powered Chat</h3>
+                <p>Interactive conversations with your PDFs using Google Gemini AI, offering smart question suggestions.
+                </p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bolt feature-icon"></i>
+                <h3>Real-time Communication</h3>
+                <p>WebSocket-based instant messaging interface for a smooth and responsive user experience.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3>Type-Safe Monorepo</h3>
+                <p>Full TypeScript implementation across the entire stack with a professional monorepo structure.</p>
+            </div>
+        </div>
+
+        <div class="architecture-section">
+            <h2 class="section-heading" style="text-align: left;">Architecture & Tech Stack</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h3 style="color: var(--skin-color); margin-bottom: 1rem;">Frontend (apps/web)</h3>
+                    <ul class="feature-list">
+                        <li><strong>Framework:</strong> React 18 with TypeScript & Vite</li>
+                        <li><strong>Styling:</strong> Tailwind CSS & Radix UI</li>
+                        <li><strong>State:</strong> TanStack Query</li>
+                        <li><strong>Routing:</strong> Wouter</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--skin-color); margin-bottom: 1rem;">Backend (apps/api)</h3>
+                    <ul class="feature-list">
+                        <li><strong>Runtime:</strong> Node.js with Express.js</li>
+                        <li><strong>AI:</strong> Google Gemini AI Integration</li>
+                        <li><strong>Database:</strong> PostgreSQL with Drizzle ORM</li>
+                        <li><strong>Real-time:</strong> WebSocket</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-grid" id="gallery">
+            <p style="text-align:center; grid-column: 1/-1; color: var(--text-color);">Project screenshots coming soon.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="https://github.com/alanjosephmonichan/ChatPDFPilot" target="_blank"
+                class="brutalist-button button-1"
+                style="margin: 0 auto; width: 220px; height: 60px; flex-direction: row; gap: 10px;">
+                <i class="fab fa-github" style="font-size: 1.5rem;"></i>
+                <span>View on GitHub</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Alan Joseph Monichan. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

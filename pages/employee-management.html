@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System - Project Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            margin-left: 0;
+            background-attachment: fixed;
+        }
+
+        .project-header {
+            padding: 100px 2rem 50px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(var(--hue-color), 19%, 5%, 0.9), var(--body-color));
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            text-decoration: none;
+            color: var(--title-color);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .back-btn:hover {
+            color: var(--skin-color);
+        }
+
+        .project-content {
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--box-color);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--skin-color);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--skin-color);
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .tech-badge {
+            background: rgba(var(--hue-color), 19%, 15%, 0.8);
+            color: var(--title-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .tech-badge:hover {
+            border-color: var(--skin-color);
+            transform: translateY(-2px);
+        }
+
+        .section-heading {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            color: var(--title-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .architecture-section,
+        .endpoints-section {
+            background: var(--box-color);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+        }
+
+        .code-block {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Fira Code', monospace;
+            color: #e6e6e6;
+            overflow-x: auto;
+            margin: 1rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border: 2px solid var(--box-color);
+            position: relative;
+            background: var(--box-color);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--skin-color);
+            box-shadow: 0 20px 40px rgba(220, 20, 60, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        ul.feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.feature-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-color);
+        }
+
+        ul.feature-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--skin-color);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+    <section class="project-header">
+        <h1 class="section-title" style="margin-bottom: 0.5rem;">Employee Management System</h1>
+        <h3 style="color: var(--skin-color); margin-bottom: 1.5rem; font-weight: 500;">Full-Stack Enterprise Application
+        </h3>
+
+        <div class="tech-stack">
+            <span class="tech-badge"><i class="fab fa-react"></i> React 18</span>
+            <span class="tech-badge"><i class="fas fa-code"></i> ASP.NET Core 8.0</span>
+            <span class="tech-badge"><i class="fas fa-database"></i> SQLite</span>
+            <span class="tech-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+            <span class="tech-badge"><i class="fas fa-shield-alt"></i> JWT Auth</span>
+        </div>
+    </section>
+
+    <div class="project-content">
+        <div class="project-description" style="text-align: center;">
+            <p>
+                A comprehensive full-stack web application for managing employees, departments, and roles with
+                role-based authentication and advanced reporting capabilities. Designed to demonstrate enterprise-level
+                development practices, including secure authentication, scalable architecture, and real-time data
+                visualization.
+            </p>
+        </div>
+
+        <h2 class="section-heading">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-user-shield feature-icon"></i>
+                <h3>Role-Based Auth</h3>
+                <p>Secure JWT authentication with distinct Admin, HR, and Employee roles, each having specific access
+                    levels and permissions.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-users-cog feature-icon"></i>
+                <h3>Employee Management</h3>
+                <p>Complete CRUD operations for managing employee records, including department assignment and role
+                    definitions.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line feature-icon"></i>
+                <h3>Dashboard Analytics</h3>
+                <p>Interactive charts and statistics visualizing department distribution, salary ranges, and employee
+                    growth.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-file-export feature-icon"></i>
+                <h3>Report Generation</h3>
+                <p>Automated generation of detailed employee and payroll reports in both PDF and Excel formats using
+                    iText7 and ClosedXML.</p>
+            </div>
+        </div>
+
+        <div class="architecture-section">
+            <h2 class="section-heading" style="text-align: left;">Architecture & Tech Stack</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h3 style="color: var(--skin-color); margin-bottom: 1rem;">Backend (ASP.NET Core)</h3>
+                    <ul class="feature-list">
+                        <li><strong>Framework:</strong> ASP.NET Core 8.0 Web API</li>
+                        <li><strong>Database:</strong> Entity Framework Core with SQLite</li>
+                        <li><strong>Auth:</strong> JWT Token-based Authentication</li>
+                        <li><strong>Patterns:</strong> Repository, DTO, Dependency Injection</li>
+                        <li><strong>Tools:</strong> AutoMapper, iText7, ClosedXML</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--skin-color); margin-bottom: 1rem;">Frontend (React)</h3>
+                    <ul class="feature-list">
+                        <li><strong>Framework:</strong> React 18 with Hooks</li>
+                        <li><strong>UI/UX:</strong> React Bootstrap, Responsive Design</li>
+                        <li><strong>State:</strong> Context API for Authentication</li>
+                        <li><strong>Network:</strong> Axios HTTP Client</li>
+                        <li><strong>Visualization:</strong> Chart.js for Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-heading">Project Gallery</h2>
+        <div class="gallery-grid" id="gallery">
+            <!-- Javascript will populate this -->
+        </div>
+
+        <div class="endpoints-section">
+            <h2 class="section-heading">API Structure</h2>
+            <div class="code-block">
+                GET /api/employees - Get all employees <br>
+                POST /api/employees - Create employee (Admin/HR)<br>
+                GET /api/dashboard/stats - Get dashboard statistics<br>
+                GET /api/reports/pdf - Generate PDF reports<br>
+                <footer>
+                    <p>&copy; 2025 Alan Joseph Monichan. All rights reserved.</p>
+                </footer>
+
+                <script>
+                    const images = [
+                        'emp1.png', 'emp2.png', 'emp3.png', 'emp4.png'
+                    ];
+
+                    const gallery = document.getElementById('gallery');
+
+                    // Check if images exist, otherwise show placeholder or hide
+                    // For now, we will assume images will be added later or use placeholders
+                    // Since we don't have the images yet, we will just create placeholders
+
+                    // This is a placeholder script. Real images need to be added to images/employee/ folder
+                    // For demonstration, we won't populate the gallery if images are missing to avoid broken images
+                    // Or we can add a comment
+
+                    /* 
+                    images.forEach((img, index) => {
+                        const item = document.createElement('div');
+                        item.className = 'gallery-item';
+                        
+                        const image = document.createElement('img');
+                        image.src = `images/employee/${img}`;
+                        image.alt = 'Employee Management System Screenshot';
+                        
+                        item.appendChild(image);
+                        gallery.appendChild(item);
+                    });
+                    */
+
+                    gallery.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: var(--text-color);">Project screenshots coming soon.</p>';
+                </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer App - Project Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            margin-left: 0;
+            background-attachment: fixed;
+        }
+
+        .project-header {
+            padding: 100px 2rem 50px;
+            text-align: center;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            text-decoration: none;
+            color: var(--title-color);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            color: var(--skin-color);
+        }
+
+        .project-description {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border: 2px solid var(--box-color);
+            position: relative;
+            aspect-ratio: 9/19;
+            background: var(--box-color);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--skin-color);
+            box-shadow: 0 20px 40px rgba(220, 20, 60, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+    <section class="project-header">
+        <h1 class="section-title">Movie Explorer App</h1>
+        <h3 style="color: var(--skin-color); margin-bottom: 1rem; font-weight: 500;">React Native Mobile Application
+        </h3>
+        <p class="project-description">
+            Discover and explore movies with this React Native app! Search for your favorite movies, view detailed
+            information like release date, rating, and cast members. Explore related movies and mark your favorites for
+            easy access later. Powered by the MovieDB API for up-to-date data. Lights, camera, action!
+        </p>
+
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="https://github.com/alanjoseph77/MovieApp" target="_blank" class="brutalist-button button-1"
+                style="margin: 0 auto; width: 220px; height: 60px; flex-direction: row; gap: 10px;">
+                <i class="fab fa-github" style="font-size: 1.5rem;"></i>
+                <span>View on GitHub</span>
+            </a>
+        </div>
+    </section>
+
+    <h2 class="section-title" style="font-size: 2rem; margin-bottom: 2rem;">App Screenshots</h2>
+    <div class="gallery-grid" id="gallery">
+        <!-- Javascript will populate this -->
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Alan Joseph Monichan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const images = [
+            'm1.png', 'm2.png', 'm3.png', 'm4.png', 'm5.png',
+            'm6.png', 'm7.png', 'm8.png', 'm9.png', 'm10.png'
+        ];
+
+        const gallery = document.getElementById('gallery');
+
+        images.forEach((img, index) => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.style.opacity = '0';
+            item.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
+
+            const image = document.createElement('img');
+            image.src = `../images/movieapp/${img}`;
+            image.alt = 'Movie Explorer App Screenshot';
+            image.loading = 'lazy';
+
+            item.appendChild(image);
+            gallery.appendChild(item);
+        });
+    </script>
+</body>
+
+</html>
